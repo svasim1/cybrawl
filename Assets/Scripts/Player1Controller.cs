@@ -16,13 +16,15 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField]
     private float Vertical;
     [SerializeField]
-    private float MoveSpeed = 10f;
+    private float MoveSpeed = 8f;
     [SerializeField]
-    private float JumpForce = 10f;
+    private float JumpForce = 7f;
     [SerializeField]
     private bool FlipRight = true;
     [SerializeField]
     private bool IsGroundedBool = true;
+
+
 
     void Start()
     {
@@ -88,4 +90,5 @@ public class NewBehaviourScript : MonoBehaviour
     //         rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
     //     }
     // }
+    // yes
 }
