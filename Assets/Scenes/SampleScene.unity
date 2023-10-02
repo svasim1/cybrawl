@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 247790530}
   - component: {fileID: 247790529}
   - component: {fileID: 247790528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
-  m_TagString: ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,7 +317,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15}
+  m_Offset: {x: 0, y: -0.015}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -434,6 +434,8 @@ GameObject:
   - component: {fileID: 1193555135}
   - component: {fileID: 1193555134}
   - component: {fileID: 1193555133}
+  - component: {fileID: 1193555138}
+  - component: {fileID: 1193555137}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -571,6 +573,119 @@ Transform:
   - {fileID: 321028175}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1193555137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193555132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9fd2a03f946ba641bb995d0ead4e589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1193555134}
+  GroundCheck: {fileID: 321028175}
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  Horizontal: 0
+  Vertical: 0
+  MoveSpeed: 10
+  JumpForce: 10
+  FlipRight: 1
+  IsGroundedBool: 1
+--- !u!114 &1193555138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193555132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9ca36cf5d793cd946aba86e1ca048c50, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1193555137}
+        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
+        m_MethodName: Player1Movement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: af815e79-818f-4fa0-a7a8-95dac4ae03dd
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 17151f58-7386-4bdb-a887-bdb62738bfdb
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3e0acdb5-b318-4d8f-a403-3a5a1f4a1491
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 25df58f7-b332-42ca-adb4-f8cd5fb14f80
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 41381328-272d-47a9-ac8f-99bfdd2c252d
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a086f67a-3e67-47d0-a7dc-c4c5a9ead81b
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 67b40883-cc2c-4e55-aac5-d6f952e19ed8
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 900f4ff7-259a-454b-bff2-82da5aa17c6c
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b93b76f2-ecd6-4c6b-be45-f122b0a23125
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9fa87fef-6eae-42aa-968c-bc53aaa2f613
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb991015-6e5b-4c3c-b3b1-e36d2e490256
+    m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 574b3146-f414-4991-9b79-ecf4774842c9
+    m_ActionName: Player/Fire[/Keyboard/e]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1534086582
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,9 +697,9 @@ GameObject:
   - component: {fileID: 1534086585}
   - component: {fileID: 1534086584}
   - component: {fileID: 1534086583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (2)
-  m_TagString: ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -712,9 +827,9 @@ GameObject:
   - component: {fileID: 1747166166}
   - component: {fileID: 1747166165}
   - component: {fileID: 1747166164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (1)
-  m_TagString: ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
