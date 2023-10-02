@@ -24,6 +24,8 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField]
     private bool IsGroundedBool = true;
 
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -88,4 +90,5 @@ public class NewBehaviourScript : MonoBehaviour
     //         rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
     //     }
     // }
+    // yes
 }
