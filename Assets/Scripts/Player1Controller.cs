@@ -23,14 +23,13 @@ public class NewBehaviourScript : MonoBehaviour
     private bool FlipRight = true;
     [SerializeField]
     private bool IsGroundedBool = true;
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         GroundCheck = transform.Find("GroundCheck");
     }
 
-    // Update is called once per frame
     void Update()
     {        
 
