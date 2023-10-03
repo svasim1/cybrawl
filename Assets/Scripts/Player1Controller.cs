@@ -36,13 +36,13 @@ public class NewBehaviourScript : MonoBehaviour
 
         CheckInput();
         
-        if(IsGroundedBool && rb.velocity.y > 0f){
-            Movement.y = 0f;
-        }
-        if(!IsGroundedBool && rb.velocity.y < 0f){
-            Movement.y = -1f;
-        }
-        rb.velocity = new Vector2(Movement.x * MoveSpeed, Movement.y * JumpForce);
+        // if(IsGroundedBool && rb.velocity.y > 0f){
+        //     Movement.y = 0f;
+        // }
+        // if(!IsGroundedBool && rb.velocity.y < 0f){
+        //     Movement.y = -1f;
+        // }
+        // rb.velocity = new Vector2(Movement.x * MoveSpeed, Movement.y * JumpForce);
 
         if(!FlipRight && Movement.x > 0f){
             Player1Flip();
@@ -56,24 +56,25 @@ public class NewBehaviourScript : MonoBehaviour
 
     void CheckInput(){
 
-        if(Input.GetKeyDown(KeyCode.W) && IsGroundedBool){
-            Movement.y = 1f;
+        if(Input.GetKeyDown("w") && IsGroundedBool){
+            rb.velocity = new Vector2(rb.velocity.x, JumpForce);
         }
-        if(Input.GetKeyDown(KeyCode.A)){
-            Movement.x = -1f;
+        if(Input.GetKeyDown("a")){
+            rb.velocity = new Vector2(-MoveSpeed, rb.velocity.y);
         }
-        if(Input.GetKeyDown(KeyCode.D)){
-            Movement.x = 1f;
+        if(Input.GetKeyDown("d")){
+            rb.velocity = new Vector2(MoveSpeed, rb.velocity.y);
         }
-        if(Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f){
-            Movement.y = 0f;
+        if(Input.GetKeyDown("d") && Input.GetKeyDown("a")){
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
-        if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A)){
-            Movement.x = 0f;
+        if(Input.GetKeyUp("a")){
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
-        if(Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.D)){
-            Movement.x = 0f;
+        if(Input.GetKeyUp("d")){
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
+
     }
     void FixedUpdate(){
         
