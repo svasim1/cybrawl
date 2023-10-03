@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,9 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     [Header("Player1 Movement")]
     [SerializeField]
-    private float Horizontal;
-    [SerializeField]
-    private float Vertical;
+    private Vector2 Movement;
     [SerializeField]
     private float MoveSpeed = 8f;
     [SerializeField]
@@ -35,30 +34,75 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {        
 
-
-
-        if(Vertical >= 0f && IsGroundedBool){
-            rb.velocity = new Vector2(Horizontal* MoveSpeed, Vertical * JumpForce);
+        CheckInput();
+        
+        if(IsGroundedBool && rb.velocity.y > 0f){
+            Movement.y = 0f;
         }
-        else{
-            rb.velocity = new Vector2(Horizontal* MoveSpeed, rb.velocity.y);
+        if(!IsGroundedBool && rb.velocity.y < 0f){
+            Movement.y = -1f;
         }
+        rb.velocity = new Vector2(Movement.x * MoveSpeed, Movement.y * JumpForce);
 
-
-        if(!FlipRight && Horizontal > 0f){
+        if(!FlipRight && Movement.x > 0f){
             Player1Flip();
             }
-        else if(FlipRight && Horizontal < 0f){
+        else if(FlipRight && Movement.x < 0f){
             Player1Flip();
             }
-    }
-
-    public void Player1Movement(InputAction.CallbackContext context){
-
-        Horizontal = context.ReadValue<Vector2>().x;
-        Vertical = context.ReadValue<Vector2>().y;
 
     }
+
+
+    void CheckInput(){
+
+        if(Input.GetKeyDown(KeyCode.W) && IsGroundedBool){
+            Movement.y = 1f;
+        }
+        if(Input.GetKeyDown(KeyCode.A)){
+            Movement.x = -1f;
+        }
+        if(Input.GetKeyDown(KeyCode.D)){
+            Movement.x = 1f;
+        }
+        if(Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f){
+            Movement.y = 0f;
+        }
+        if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A)){
+            Movement.x = 0f;
+        }
+        if(Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.D)){
+            Movement.x = 0f;
+        }
+    }
+    void FixedUpdate(){
+        
+        // if(Input.GetKeyDown("w") && IsGroundedBool){
+        //     Vertical = 1f;
+        // }
+        // if(Input.GetKeyDown("a")){
+        //     Horizontal = -1f;
+        // }
+        // if(Input.GetKeyDown("d")){
+        //     Horizontal = 1f;
+        // }
+        // if(Input.GetKeyUp("a")){
+        //     Horizontal = 0f;
+        // }
+        // if(Input.GetKeyUp("d")){
+        //     Horizontal = 0f;
+        // }
+        // if(Input.GetKeyUp("w") && rb.velocity.y > 0f){
+        //     Vertical = 0f;
+        // }
+    }
+
+    // public void Player1Movement(InputAction.CallbackContext context){
+
+    //     Horizontal = context.ReadValue<Vector2>().x;
+    //     Vertical = context.ReadValue<Vector2>().y;
+
+    // }
 
     public void Player1Flip(){
 
