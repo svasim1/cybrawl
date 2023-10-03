@@ -5,13 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
+    public void PlayGame()
+    {
+        SceneManager.LoadSceneAsync("SampleScene");
+    }
+
     public void PlayTutorial()
     {
         SceneManager.LoadSceneAsync("Tutorial");
     }
 
-    public void SkipTutorial()
+    public void QuitGame()
     {
-        SceneManager.LoadSceneAsync("SampleScene");
+        Application.Quit();
     }
 }
