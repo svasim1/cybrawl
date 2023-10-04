@@ -11,28 +11,15 @@ public class Player : MonoBehaviour
 
     [Header("Player Movement")]
     [SerializeField] private float speed;
+    [SerializeField] private float JumpForce;
+    [SerializeField] private bool IsGroundedBool;
     [SerializeField] private string inputNameHorizontal;
     [SerializeField] private string inputNameVertical;
+    public int JumpCount;
+    public int MaxJumpCount = 2;
+    public bool HasJumped = false;
 
 
-
-    public float moveSpeed;
-    public float MaxSpeed;
-    public float jumpForce;
-    public float moveHorizontal;
-    public float moveVertical;
-    public bool IsGroundedBool;
-    public bool isJumpFalling;
-    public float runAcceleration;
-    public float runDecceleration;
-    public float runAccAmount;
-    public float runDeccAmount;
-    public float runMaxSpeed;
-    public float accInAir;
-    public float decInAir;
-    public bool OnWall;
-    public float wallJumpX;
-    public float WallJumpY;
 
     private Rigidbody2D rb;
 
@@ -44,17 +31,6 @@ public class Player : MonoBehaviour
 
         IsGroundedBool = true;
 
-        moveSpeed = 5f;
-        wallJumpX = 10f;
-        WallJumpY = 10f;
-        MaxSpeed = 10f;
-        jumpForce = 10f;
-        accInAir = 0.5f;
-        decInAir = 0.5f;
-        runAcceleration = 10f;
-        runDecceleration = 10f;
-		runAccAmount = (50 * runAcceleration) / MaxSpeed;
-		runDeccAmount = (50 * runDecceleration) / MaxSpeed;
         GroundCheck = transform.Find("GroundCheck");
     }
 
@@ -67,32 +43,26 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Run();
+        Jump();
     }
 
     void Run(){
-        
-        float targetSpeed = moveHorizontal * MaxSpeed;
+        rb.velocity = new Vector2(Movement.x * speed, rb.velocity.y);
+    }
 
-        targetSpeed = Mathf.Lerp(rb.velocity.x, targetSpeed, 0.1f);
+    void Jump(){
 
-        float AccRate;
-
-        if(!IsGroundedBool){
-            AccRate = (Mathf.Abs(targetSpeed) > 0.01f) ? runAccAmount : runDeccAmount;
+        if(Movement.y > 0){
+            if(IsGroundedBool == true){
+                JumpCount++;
+                HasJumped = true;
+                rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce);
+            }
+            // else if(IsGroundedBool == false && HasJumped == true){
+            //     JumpCount++;
+            //     rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce);
+            // }
         }
-        else{
-            AccRate = (Mathf.Abs(targetSpeed) > 0.01f) ? runAccAmount * accInAir : runDeccAmount * decInAir;
-        }
-
-        if(Mathf.Abs(rb.velocity.x) > Mathf.Abs(targetSpeed)){
-            AccRate = 0;
-        }
-
-        float SpeedDif = targetSpeed - rb.velocity.x;;
-
-        float movement = AccRate * SpeedDif;
-
-        rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
     }
 
     void OnTriggerEnter2D(Collider2D collision){
