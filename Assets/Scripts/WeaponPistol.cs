@@ -23,10 +23,18 @@ public class WeaponPistol : MonoBehaviour
 
     void Update() {
         fire = Input.GetButtonDown(fireButton);
-        if (fire) {
+        if (fire && ammo > 0) {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
+            bullet.GetComponent<Bullet>().damage = bulletDamage;
+            Destroy(bullet, lifeTime);
+            ammo--;
+            StartCoroutine(Reload());
         }
+    }
 
+    IEnumerator Reload() {
+        yield return new WaitForSeconds(reloadTime);
+        ammo = 10f;
     }
 }
