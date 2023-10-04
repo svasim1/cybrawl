@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public int JumpCount;
     public int MaxJumpCount = 2;
     public bool HasJumped = false;
+    public bool SecondJump;
+    public float LastOnGround;
 
 
 
@@ -38,12 +40,17 @@ public class Player : MonoBehaviour
     {
         Movement.x = Input.GetAxisRaw(inputNameHorizontal);
         Movement.y = Input.GetAxisRaw(inputNameVertical);
+
+        LastOnGround -= Time.deltaTime;
     }
 
     private void FixedUpdate()
     {
         Run();
         Jump();
+        if(IsGroundedBool == true){
+            LastOnGround = 0.1f;
+        }
     }
 
     void Run(){
@@ -54,20 +61,22 @@ public class Player : MonoBehaviour
 
         if(Movement.y > 0){
             if(IsGroundedBool == true){
-                JumpCount++;
-                HasJumped = true;
-                rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce);
+                Debug.Log("Jump1");
+                rb.velocity = new Vector2(rb.velocity.x, JumpForce);
+                return;
             }
-            // else if(IsGroundedBool == false && HasJumped == true){
-            //     JumpCount++;
-            //     rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce);
-            // }
+            else if(SecondJump == true && LastOnGround <= -0.3f){
+                Debug.Log("Jump2");
+                rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce);
+                SecondJump = false;
+            }
         }
     }
 
     void OnTriggerEnter2D(Collider2D collision){
     if(collision.gameObject.CompareTag("Ground")){
         IsGroundedBool = true;
+        SecondJump = true;
         }
     }
     void OnTriggerExit2D(Collider2D collision){
