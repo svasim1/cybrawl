@@ -8,6 +8,7 @@ public class WeaponPistol : MonoBehaviour
     [Header("Weapon")]
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
+    public Sprite bulletSprite;
 
     [Header("Weapon Stats")]
     public float bulletSpeed = 10f;
@@ -17,24 +18,27 @@ public class WeaponPistol : MonoBehaviour
     public float reloadTime = 1f;
 
     public float lifeTime = 1f;
-    public float ammo = 10f;
+    public int ammo = 10;
     public bool fire;
     [SerializeField] private string fireButton;
 
     void Update() {
         fire = Input.GetButtonDown(fireButton);
-        if (fire && ammo > 0) {
+        if (fire) {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
             bullet.GetComponent<Bullet>().damage = bulletDamage;
+            bullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
             Destroy(bullet, lifeTime);
             ammo--;
-            StartCoroutine(Reload());
+            if (ammo == 0) {
+                OutOfAmmo();
+            }
         }
     }
-
-    IEnumerator Reload() {
-        yield return new WaitForSeconds(reloadTime);
-        ammo = 10f;
+    void OutOfAmmo() {
+        
+        Destroy(gameObject);
     }
 }
+    
