@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     public bool SecondJump;
     public float LastOnGround;
 
+    public bool facingRight = true;
+
 
 
     private Rigidbody2D rb;
@@ -31,7 +33,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
 
         IsGroundedBool = true;
 
@@ -51,24 +52,30 @@ public class Player : MonoBehaviour
     {
         Run();
         Jump();
-        if(IsGroundedBool == true){
+        if (IsGroundedBool == true)
+        {
             LastOnGround = 0.1f;
         }
     }
 
-    void Run(){
+    void Run()
+    {
         rb.velocity = new Vector2(Movement.x * speed, rb.velocity.y);
     }
 
-    void Jump(){
+    void Jump()
+    {
 
-        if(Movement.y > 0){
-            if(IsGroundedBool == true){
+        if (Movement.y > 0)
+        {
+            if (IsGroundedBool == true)
+            {
                 Debug.Log("Jump1");
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
                 return;
             }
-            else if(SecondJump == true && LastOnGround <= -0.3f){
+            else if (SecondJump == true && LastOnGround <= -0.3f)
+            {
                 Debug.Log("Jump2");
                 rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce);
                 SecondJump = false;
@@ -76,17 +83,39 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision){
-    if(collision.gameObject.CompareTag("Ground")){
-        //if(collision.collider == transform.Find("GroundCheck").GetComponent<Collider2D>()){
+    void LateUpdate()
+    {
+        if (Movement.x < 0 && facingRight)
+        {
+            Flip();
+        }
+        else if (Movement.x > 0 && !facingRight)
+        {
+            Flip();
+        }
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            //if(collision.collider == transform.Find("GroundCheck").GetComponent<Collider2D>()){
             Debug.Log("Grounded");
             IsGroundedBool = true;
             SecondJump = true;
             //}
         }
     }
-    void OnTriggerExit2D(Collider2D collision){
-        if(collision.gameObject.CompareTag("Ground")){
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
             IsGroundedBool = false;
         }
     }

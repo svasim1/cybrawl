@@ -104,10 +104,8 @@ MonoBehaviour:
   bulletSpeed: 10
   bulletDamage: 10
   fireRate: 0.5
-  reloadTime: 1
   lifeTime: 1
   ammo: 10
-  fire: 0
   fireButton: Fire1
 --- !u!1 &7641947510793962016
 GameObject:
