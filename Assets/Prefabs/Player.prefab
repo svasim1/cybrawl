@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GroundCheck: {fileID: 3175247623538236191}
-  WallCheck: {fileID: 0}
+  WallCheck: {fileID: 3034331886422866944}
   speed: 8
   JumpForce: 15
   IsGroundedBool: 0
