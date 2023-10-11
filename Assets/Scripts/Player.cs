@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public int MaxJumpCount = 2;
     public bool HasJumped = false;
     public bool SecondJump;
+    public bool OnWall;
     public float LastOnGround;
 
     public bool facingRight = true;
