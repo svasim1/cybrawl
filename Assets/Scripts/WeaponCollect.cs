@@ -18,6 +18,7 @@ public class WeaponCollect : MonoBehaviour
 
             newWeapon.transform.SetParent(WeaponHolder.transform);
             newWeapon.transform.localPosition = Vector3.zero;
+            newWeapon.transform.localScale = Vector3.one;
 
             if (!transform.root.GetComponent<Player>().facingRight)
             {
