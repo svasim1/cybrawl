@@ -101,11 +101,11 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 5548367619685107612}
   bulletPrefab: {fileID: 8523104596806793939, guid: f34546124e24dca47a1b3f9497a2636b, type: 3}
   bulletSprite: {fileID: 21300000, guid: febc823eaeefe2d4cb3055e693d9049c, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 30
   bulletDamage: 10
   fireRate: 0.5
   lifeTime: 1
-  ammo: 10
+  ammo: 5
   fireButton: Fire1
 --- !u!1 &7641947510793962016
 GameObject:

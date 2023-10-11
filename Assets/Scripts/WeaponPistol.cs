@@ -19,12 +19,17 @@ public class WeaponPistol : MonoBehaviour
 
     public float lifeTime = 1f;
     public int ammo = 10;
-    [SerializeField] private string fireButton;
-
+    [SerializeField] private string fireButton; 
 
     private void Start()
     {
         originalBulletSpeed = bulletSpeed;
+
+        Player player = GetComponentInParent<Player>();
+        if (player != null)
+        {
+            fireButton = player.fireButton;
+        }
     }
 
     void Update()
