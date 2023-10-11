@@ -14,7 +14,7 @@ public class WeaponPistol : MonoBehaviour
     public float bulletSpeed = 10f;
 
     private float originalBulletSpeed;
-    public float bulletDamage = 10f;
+    public float bulletDamage = 25f;
     public float fireRate = 0.5f;
 
     public float lifeTime = 1f;

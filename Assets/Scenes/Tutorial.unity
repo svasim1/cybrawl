@@ -314,7 +314,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -451,6 +451,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8431448873809617635, guid: b81704c77f6a5914c886354729ab561c, type: 3}
       insertIndex: 3
       addedObject: {fileID: 1972706667}
+    - targetCorrespondingSourceObject: {fileID: 8431448873809617635, guid: b81704c77f6a5914c886354729ab561c, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1972706676}
   m_SourcePrefab: {fileID: 100100000, guid: b81704c77f6a5914c886354729ab561c, type: 3}
 --- !u!1 &747038637
 GameObject:
@@ -1493,6 +1496,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5305903546408968211, guid: b81704c77f6a5914c886354729ab561c, type: 3}
   m_PrefabInstance: {fileID: 534678992}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1972706676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972706663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898f760e55c190143a2e98ba8276430e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &2048605812
 GameObject:
   m_ObjectHideFlags: 0

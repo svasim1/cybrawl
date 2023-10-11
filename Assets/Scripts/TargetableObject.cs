@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class TargetableObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int health = 10;
+
+    public void TakeDamage(float damage)
     {
-        
+        health -= (int)damage;
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Die()
     {
-        
+        // Code to handle player death
     }
 }
