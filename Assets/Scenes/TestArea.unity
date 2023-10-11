@@ -218,7 +218,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 247790527}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 122a3315ace118e46bd8c5d9a4b2323b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -348,7 +348,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 249775512}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 122a3315ace118e46bd8c5d9a4b2323b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -779,11 +779,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278334835}
   m_CullTransparentMesh: 1
---- !u!4 &1345346423 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3034331886422866944, guid: b81704c77f6a5914c886354729ab561c, type: 3}
-  m_PrefabInstance: {fileID: 1402083566}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1402083566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -792,10 +787,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1426632757595665340, guid: b81704c77f6a5914c886354729ab561c, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3672451035394188599, guid: b81704c77f6a5914c886354729ab561c, type: 3}
       propertyPath: WallCheck
       value: 
-      objectReference: {fileID: 1345346423}
+      objectReference: {fileID: 0}
     - target: {fileID: 5305903546408968211, guid: b81704c77f6a5914c886354729ab561c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.4190264
@@ -841,7 +840,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7946930270333500339, guid: b81704c77f6a5914c886354729ab561c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b81704c77f6a5914c886354729ab561c, type: 3}
@@ -872,7 +872,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1534086582}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 122a3315ace118e46bd8c5d9a4b2323b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1002,7 +1002,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1747166163}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 122a3315ace118e46bd8c5d9a4b2323b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1178,7 +1178,8 @@ PrefabInstance:
       value: Player (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7946930270333500339, guid: b81704c77f6a5914c886354729ab561c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b81704c77f6a5914c886354729ab561c, type: 3}

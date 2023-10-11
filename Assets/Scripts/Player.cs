@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     [Header("Player")]
     public Transform GroundCheck;
     public Transform WallCheck;
-    public LayerMask GroundLayer;
 
     [Header("Player Movement")]
     [SerializeField] private float speed;
@@ -17,11 +16,9 @@ public class Player : MonoBehaviour
     [SerializeField] private bool IsTouchingWall;
     [SerializeField] private string inputNameHorizontal;
     [SerializeField] private string inputNameVertical;
-    public int JumpCount;
-    public int MaxJumpCount = 2;
-    public bool HasJumped = false;
+
+    [SerializeField] public string fireButton;
     public bool SecondJump;
-    public bool OnWall;
     public float LastOnGround;
 
     public bool facingRight = true;
