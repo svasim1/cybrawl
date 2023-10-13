@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] public string fireButton;
     public bool SecondJump;
+    public bool DBTrue;
     public float LastOnGround;
 
     public bool facingRight = true;
@@ -56,6 +57,35 @@ public class Player : MonoBehaviour
         }
     }
 
+    // private bool DJHandler()
+    // {
+    //     if (Movement.y == 0)
+    //     {
+    //         SecondJump = true;
+    //         return false;
+    //     }
+    //     else if (Movement.y > 0)
+    //     {
+    //         if (IsGroundedBool == true)
+    //         {
+    //             SecondJump = true;
+    //             return false;
+    //         }
+    //         else
+    //         {
+    //             SecondJump = false;
+    //             if (LastOnGround <= -0.2f)
+    //             {
+    //                 return true;
+    //             }
+    //             else
+    //             {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    // }
+
     void Run()
     {
         rb.velocity = new Vector2(Movement.x * speed, rb.velocity.y);
@@ -72,7 +102,7 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
                 return;
             }
-            else if (SecondJump == true && LastOnGround <= -0.3f)
+            else if (SecondJump == true && LastOnGround <= -0.2f)
             {
                 Debug.Log("Jump2");
                 rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce);
