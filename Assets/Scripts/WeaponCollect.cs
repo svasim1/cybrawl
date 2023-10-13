@@ -9,7 +9,7 @@ public class WeaponCollect : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("WeaponSpawner") && !hasWeapon)
+        if (!hasWeapon && collision.CompareTag("WeaponSpawner"))
         {
             Debug.Log("Activated pickup");
             Destroy(collision.gameObject);
@@ -19,11 +19,6 @@ public class WeaponCollect : MonoBehaviour
             newWeapon.transform.SetParent(WeaponHolder.transform);
             newWeapon.transform.localPosition = Vector3.zero;
             newWeapon.transform.localScale = Vector3.one;
-
-            if (!transform.root.GetComponent<Player>().facingRight)
-            {
-                newWeapon.transform.localScale = new Vector3(-newWeapon.transform.localScale.x, newWeapon.transform.localScale.y, newWeapon.transform.localScale.z);
-            }
 
             hasWeapon = true;
 

@@ -17,6 +17,6 @@ public class TargetableObject : MonoBehaviour
 
     private void Die()
     {
-        // Code to handle player death
+        Destroy(gameObject);
     }
 }
