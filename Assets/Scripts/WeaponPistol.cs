@@ -36,29 +36,36 @@ public class WeaponPistol : MonoBehaviour
     {
         if (Input.GetButtonDown(fireButton))
         {
-            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            if (!transform.root.GetComponent<Player>().facingRight)
-            {
-                bulletSpeed = -originalBulletSpeed;
-                bullet.transform.localScale = new Vector3(-bullet.transform.localScale.x, bullet.transform.localScale.y, bullet.transform.localScale.z);
-            }
-            else
-            {
-                bulletSpeed = originalBulletSpeed;
-            }
-
-            bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
-            bullet.GetComponent<Bullet>().damage = bulletDamage;
-            bullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
-            Destroy(bullet, lifeTime);
-            ammo--;
-            if (ammo == 0)
-            {
-                OutOfAmmo();
-            }
+            Shoot();
         }
     }
 
+    void Shoot()
+    {
+        
+        var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        if (!transform.root.GetComponent<Player>().facingRight)
+        {
+            bulletSpeed = -originalBulletSpeed;
+            bullet.transform.localScale = new Vector3(-bullet.transform.localScale.x, bullet.transform.localScale.y, bullet.transform.localScale.z);
+        }
+        else
+        {
+            bulletSpeed = originalBulletSpeed;
+        }
+
+        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * bulletSpeed;
+        bullet.GetComponent<Bullet>().damage = bulletDamage;
+        bullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
+        Destroy(bullet, lifeTime);
+        ammo--;
+        if (ammo == 0)
+        {
+            OutOfAmmo();
+        }
+}
+
+    // Ammo counting does not work when there are multiple GameObjects with the TargetableObject script
     void OutOfAmmo()
     {
         Destroy(gameObject);
