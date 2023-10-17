@@ -7,12 +7,12 @@ public class TitleScreen : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("SampleScene");
+        SceneManager.LoadSceneAsync("Tutorial");
     }
 
     public void PlayTutorial()
     {
-        SceneManager.LoadSceneAsync("Tutorial");
+        SceneManager.LoadSceneAsync("TutorialLevel");
     }
 
     public void QuitGame()
