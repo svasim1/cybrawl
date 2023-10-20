@@ -24,14 +24,23 @@ public class Player : MonoBehaviour
 
     public bool facingRight = true;
 
+    [Header("Player Conditions")]
+    public bool IsGrounded;
+    public bool IsMoving;
+    public bool OnWall;
+    public bool IsFalling;
+    public bool IsJumping;
+
 
 
     private Rigidbody2D rb;
+    private Animator anim;
 
     public Vector2 Movement;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         IsGroundedBool = true;
 
@@ -45,6 +54,7 @@ public class Player : MonoBehaviour
         Movement.y = Input.GetAxisRaw(inputNameVertical);
 
         LastOnGround -= Time.deltaTime;
+        Update_Conditions();
     }
 
     private void FixedUpdate()
@@ -85,6 +95,23 @@ public class Player : MonoBehaviour
     //         }
     //     }
     // }
+
+    void Update_Conditions(){
+
+        IsGrounded = IsGroundedBool;
+        IsMoving = Movement.x != 0;
+        OnWall = false;
+        IsFalling = rb.velocity.y < 0;
+        IsJumping = rb.velocity.y > 0;
+        
+        anim.SetBool("IsGrounded", IsGrounded);
+        anim.SetBool("IsMoving", IsMoving);
+        anim.SetBool("OnWall", OnWall);
+        anim.SetBool("IsFalling", IsFalling);
+        anim.SetBool("IsJumping", IsJumping);
+
+
+    }
 
     void Run()
     {
