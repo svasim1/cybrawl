@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
         IsGrounded = IsGroundedBool;
         IsMoving = Movement.x != 0;
         OnWall = false;
-        IsFalling = rb.velocity.y < 0;
+        IsFalling = rb.velocity.y < 0 && !IsGrounded;
         IsJumping = rb.velocity.y > 0;
         
         anim.SetBool("IsGrounded", IsGrounded);
