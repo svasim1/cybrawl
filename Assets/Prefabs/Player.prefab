@@ -238,7 +238,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1288692472, guid: 831c6c0cd0b59d04dbfbd0f28d257194, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.27430224, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   GroundCheck: {fileID: 3175247623538236191}
   WallCheck: {fileID: 0}
   speed: 8
-  JumpForce: 15
+  JumpForce: 16
   IsGroundedBool: 0
   IsTouchingWall: 0
   inputNameHorizontal: P1 Horizontal
@@ -273,6 +273,11 @@ MonoBehaviour:
   DBTrue: 0
   LastOnGround: 0
   facingRight: 1
+  IsGrounded: 0
+  IsMoving: 0
+  OnWall: 0
+  IsFalling: 0
+  IsJumping: 0
   Movement: {x: 0, y: 0}
 --- !u!114 &9013010866469741329
 MonoBehaviour:
