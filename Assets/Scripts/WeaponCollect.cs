@@ -6,13 +6,14 @@ public class WeaponCollect : MonoBehaviour
 {
     public GameObject WeaponHolder;
     public bool hasWeapon = false;
+    public float spawnCooldown = 20f;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!hasWeapon && collision.CompareTag("WeaponSpawner"))
         {
             Debug.Log("Activated pickup");
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
 
             GameObject newWeapon = Instantiate(collision.GetComponent<WeaponSpawner>().weaponPrefab);
 
@@ -23,6 +24,12 @@ public class WeaponCollect : MonoBehaviour
             hasWeapon = true;
 
             newWeapon.SetActive(true);
+            StartCoroutine(EnableSpawnerAfterDelay(collision.gameObject, spawnCooldown));
         }
+    }
+    IEnumerator EnableSpawnerAfterDelay(GameObject spawner, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        spawner.SetActive(true);
     }
 }
