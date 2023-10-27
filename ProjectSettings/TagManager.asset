@@ -4,14 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ground
   - Ground
   - WeaponSpawner
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BulletPassThrough
   - Water
   - UI
   - Ground
