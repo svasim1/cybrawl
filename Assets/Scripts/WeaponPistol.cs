@@ -69,6 +69,6 @@ public class WeaponPistol : MonoBehaviour
     void OutOfAmmo()
     {
         Destroy(gameObject);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponCollect>().hasWeapon = false;
+        GetComponentInParent<WeaponCollect>().hasWeapon = false;
     }
 }
