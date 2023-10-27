@@ -37,6 +37,8 @@ public class PauseMenu : MonoBehaviour
 
     public void TitleScreen()
     {
+        GameData.P1Score = 0;
+        GameData.P2Score = 0;
         Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("TitleScreen");
     }
