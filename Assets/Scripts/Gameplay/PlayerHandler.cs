@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class PlayerHandler : MonoBehaviour
 {
     private Transform Player1;
     private Transform Player2;
     private bool AlreadyWon = false;
+    public float FloatHealthR;
+    public float FloatHealthL;
 
     void Update()
     {
+
+        HandleHealth();
         // Find the objects called Player1 and Player2
         GameObject Player1Obj = GameObject.Find("Player1");
         GameObject Player2Obj = GameObject.Find("Player2");
@@ -18,18 +25,31 @@ public class PlayerHandler : MonoBehaviour
             AlreadyWon = true;
             Player1Win();
             Debug.Log("Player 1 Wins!");
+            NextLevel();
         }
         if(Player2Obj != null && Player1Obj == null && AlreadyWon == false){
             AlreadyWon = true;
             Player2Win();
             Debug.Log("Player 2 Wins!");
+            NextLevel();
         }
         if(Player1Obj == null && Player2Obj == null && AlreadyWon == false){
             AlreadyWon = true;
             Draw();
             Debug.Log("Draw!");
+            NextLevel();
         }
 
+    }
+
+    string LvlNum(){
+        string LvlNum = Random.Range(1, 3).ToString();
+        Debug.Log("Level Number: " + LvlNum);
+        return LvlNum;
+    }
+
+    void NextLevel(){
+        SceneManager.LoadScene($"PVP{LvlNum()}");
     }
 
     void Player1Win(){
@@ -72,5 +92,29 @@ public class PlayerHandler : MonoBehaviour
     void Reset(){
         GameData.P1Score = 0;
         GameData.P2Score = 0;
+    }
+
+    void HandleHealth(){
+        Image HealthR = GameObject.Find("HealthR").GetComponent<Image>();
+        Image HealthL = GameObject.Find("HealthL").GetComponent<Image>();
+        GameObject player1Obj = GameObject.Find("Player1");
+        GameObject player2Obj = GameObject.Find("Player2");
+
+        if (player1Obj != null) {
+            FloatHealthL = player1Obj.GetComponent<TargetableObject>().health;
+            Debug.Log("Player 1 Health: " + FloatHealthL);
+        } else {
+            FloatHealthL = 0;
+        }
+
+        if (player2Obj != null) {
+            FloatHealthR = player2Obj.GetComponent<TargetableObject>().health;
+            Debug.Log("Player 2 Health: " + FloatHealthR);
+        } else {
+            FloatHealthR = 0;
+        }
+
+        HealthR.fillAmount = FloatHealthR / 50f;
+        HealthL.fillAmount = FloatHealthL / 50f;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Saw : MonoBehaviour
 {
     public float damage;
+    public float rotationSpeed = 1f;
 
     void OnCollisionEnter2D(Collision2D collision) {
 
@@ -12,5 +13,10 @@ public class Saw : MonoBehaviour
         {
             collision.gameObject.GetComponent<TargetableObject>().TakeDamage(damage);
         }
+    }
+
+    void Update()
+    {
+        transform.Rotate(0, 0, rotationSpeed);
     }
 }
