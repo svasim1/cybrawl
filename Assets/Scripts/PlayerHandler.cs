@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerHandler : MonoBehaviour
 {
@@ -18,18 +20,31 @@ public class PlayerHandler : MonoBehaviour
             AlreadyWon = true;
             Player1Win();
             Debug.Log("Player 1 Wins!");
+            NextLevel();
         }
         if(Player2Obj != null && Player1Obj == null && AlreadyWon == false){
             AlreadyWon = true;
             Player2Win();
             Debug.Log("Player 2 Wins!");
+            NextLevel();
         }
         if(Player1Obj == null && Player2Obj == null && AlreadyWon == false){
             AlreadyWon = true;
             Draw();
             Debug.Log("Draw!");
+            NextLevel();
         }
 
+    }
+
+    string LvlNum(){
+        string LvlNum = Random.Range(1, 3).ToString();
+        Debug.Log("Level Number: " + LvlNum);
+        return LvlNum;
+    }
+
+    void NextLevel(){
+        SceneManager.LoadScene($"PVP{LvlNum()}");
     }
 
     void Player1Win(){
