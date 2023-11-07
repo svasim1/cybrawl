@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class PlayerHandler : MonoBehaviour
@@ -9,9 +10,13 @@ public class PlayerHandler : MonoBehaviour
     private Transform Player1;
     private Transform Player2;
     private bool AlreadyWon = false;
+    public float FloatHealthR;
+    public float FloatHealthL;
 
     void Update()
     {
+
+        HandleHealth();
         // Find the objects called Player1 and Player2
         GameObject Player1Obj = GameObject.Find("Player1");
         GameObject Player2Obj = GameObject.Find("Player2");
@@ -87,5 +92,29 @@ public class PlayerHandler : MonoBehaviour
     void Reset(){
         GameData.P1Score = 0;
         GameData.P2Score = 0;
+    }
+
+    void HandleHealth(){
+        Image HealthR = GameObject.Find("HealthR").GetComponent<Image>();
+        Image HealthL = GameObject.Find("HealthL").GetComponent<Image>();
+        GameObject player1Obj = GameObject.Find("Player1");
+        GameObject player2Obj = GameObject.Find("Player2");
+
+        if (player1Obj != null) {
+            FloatHealthL = player1Obj.GetComponent<TargetableObject>().health;
+            Debug.Log("Player 1 Health: " + FloatHealthL);
+        } else {
+            FloatHealthL = 0;
+        }
+
+        if (player2Obj != null) {
+            FloatHealthR = player2Obj.GetComponent<TargetableObject>().health;
+            Debug.Log("Player 2 Health: " + FloatHealthR);
+        } else {
+            FloatHealthR = 0;
+        }
+
+        HealthR.fillAmount = FloatHealthR / 50f;
+        HealthL.fillAmount = FloatHealthL / 50f;
     }
 }
