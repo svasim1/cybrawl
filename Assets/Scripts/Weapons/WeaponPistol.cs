@@ -12,11 +12,9 @@ public class WeaponPistol : MonoBehaviour
 
     [Header("Weapon Stats")]
     public float bulletSpeed = 10f;
-
     private float originalBulletSpeed;
     public float bulletDamage = 25f;
     public float fireRate = 0.5f;
-
     public float lifeTime = 1f;
     public int ammo = 10;
     [SerializeField] private string fireButton; 
