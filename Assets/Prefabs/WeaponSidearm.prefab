@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6579970559507963857}
   - component: {fileID: 1958946881408269777}
-  - component: {fileID: 1530527519744978250}
+  - component: {fileID: 7965207247951480971}
   m_Layer: 0
-  m_Name: WeaponPistol
+  m_Name: WeaponSidearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a2f05ff5ab81e7c478f1eb1874e66dce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecae2c4fe64270944bb594e9dade42aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1530527519744978250
+--- !u!114 &7965207247951480971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,17 +95,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004825729370747848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c2b184fdc90dab40992d76a9645d4f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 050ec30554d1c674a934ce75f6a5ca28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 5548367619685107612}
-  bulletPrefab: {fileID: 8523104596806793939, guid: f34546124e24dca47a1b3f9497a2636b, type: 3}
-  bulletSprite: {fileID: 21300000, guid: febc823eaeefe2d4cb3055e693d9049c, type: 3}
-  bulletSpeed: 30
-  bulletDamage: 10
-  fireRate: 0.5
-  lifeTime: 1
-  ammo: 5
+  raySpawnPoint: {fileID: 5548367619685107612}
+  rayDamage: 15
+  rayDistance: 100
+  ammo: 8
   fireButton: Fire1
 --- !u!1 &7641947510793962016
 GameObject:
@@ -117,7 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5548367619685107612}
   m_Layer: 0
-  m_Name: BulletSpawnPoint
+  m_Name: RaySpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 7641947510793962016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0456, y: 0.0032, z: 0}
+  m_LocalPosition: {x: 0.255, y: 0.072, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

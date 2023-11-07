@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetableObject : MonoBehaviour
 {
-    public int health = 50;
+    public int health = 100;
 
     public void TakeDamage(float damage)
     {
