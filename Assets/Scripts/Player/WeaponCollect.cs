@@ -10,23 +10,30 @@ public class WeaponCollect : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Check if player is colliding with object tagged WeaponSpawner
         if (!hasWeapon && collision.CompareTag("WeaponSpawner"))
         {
-            Debug.Log("Activated pickup");
+            Debug.Log("OnTriggerEnter2D called with " + collision.gameObject.name);
+
+            // Hide the weapon spawner
             collision.gameObject.SetActive(false);
 
+            // Set the weapon to WeaponHolder
             GameObject newWeapon = Instantiate(collision.GetComponent<WeaponSpawner>().weaponPrefab);
-
             newWeapon.transform.SetParent(WeaponHolder.transform);
             newWeapon.transform.localPosition = Vector3.zero;
             newWeapon.transform.localScale = Vector3.one;
+            newWeapon.SetActive(true);
 
+            // Set hasWeapon to true
             hasWeapon = true;
 
-            newWeapon.SetActive(true);
+            // Spawn weapon spawner after spawnCooldown
             StartCoroutine(EnableSpawnerAfterDelay(collision.gameObject, spawnCooldown));
         }
     }
+
+    // Enable spawner after delay
     IEnumerator EnableSpawnerAfterDelay(GameObject spawner, float delay)
     {
         yield return new WaitForSeconds(delay);

@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
+    // Play the game
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Tutorial");
+        SceneManager.LoadSceneAsync("PVP1");
     }
 
+    // Play the tutorial
     public void PlayTutorial()
     {
         SceneManager.LoadSceneAsync("TutorialLevel");
     }
 
+    // Quit the game
     public void QuitGame()
     {
         Application.Quit();

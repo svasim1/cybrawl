@@ -35,6 +35,8 @@ public class WeaponSidearm : MonoBehaviour
 
     void Shoot()
     {
+        Debug.Log("Ray shot");
+
         // Create a LayerMask that includes all layers except PassThrough
         int layerMask = ~(1 << LayerMask.NameToLayer("PassThrough"));
 
@@ -48,8 +50,9 @@ public class WeaponSidearm : MonoBehaviour
         {
             // Deal damage to the player
             hit.transform.GetComponent<TargetableObject>().TakeDamage(rayDamage);
-            Debug.Log(hit.transform.name + " was hit by the ray");
         }
+        
+        Debug.Log(hit.transform.name + " was hit by the ray");
 
         // Decrease ammo by one
         ammo--;
@@ -64,9 +67,14 @@ public class WeaponSidearm : MonoBehaviour
     // Destroy the weapon when out of ammo
     void OutOfAmmo()
     {
+        Debug.Log("Out of ammo");
         Destroy(gameObject);
 
         // Set hasWeapon to false on the player
         GetComponentInParent<WeaponCollect>().hasWeapon = false;
+        if (GetComponentInParent<WeaponCollect>().hasWeapon == false)
+        {
+            Debug.Log("Player has no weapon");
+        }
     }
 }

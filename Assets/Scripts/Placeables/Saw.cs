@@ -6,18 +6,20 @@ public class Saw : MonoBehaviour
 {
     public float damage;
     public float rotationSpeed = 1f;
-    public string saw;
 
     void OnCollisionEnter2D(Collision2D collision) {
 
+        // Check for collision with object tagged Player
         if (collision.gameObject.CompareTag("Player"))
         {
+            // Deal damage to the player
             collision.gameObject.GetComponent<TargetableObject>().TakeDamage(damage);
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        // Rotate the saw
         transform.Rotate(0, 0, rotationSpeed);
     }
 }

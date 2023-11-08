@@ -39,6 +39,8 @@ public class WeaponCannon : MonoBehaviour
 
     void Shoot()
     {
+        Debug.Log("Cannon shot");
+
         // Determine the direction of the bullet based on the player's facing direction
         Vector2 bulletDirection = transform.root.GetComponent<Player>().facingRight ? Vector2.right : Vector2.left;
 
@@ -73,9 +75,14 @@ public class WeaponCannon : MonoBehaviour
     // Destroy the weapon when out of ammo
     void OutOfAmmo()
     {
+        Debug.Log("Out of ammo");
         Destroy(gameObject);
 
         // Set hasWeapon to false on the player
         GetComponentInParent<WeaponCollect>().hasWeapon = false;
+        if (GetComponentInParent<WeaponCollect>().hasWeapon == false)
+        {
+            Debug.Log("Player has no weapon");
+        }
     }
 }
