@@ -44,7 +44,7 @@ public class PlayerHandler : MonoBehaviour
     }
 
     string LvlNum(){
-        string LvlNum = Random.Range(1, 3).ToString();
+        string LvlNum = Random.Range(1, 4).ToString();
         Debug.Log("Level Number: " + LvlNum);
         return LvlNum;
     }
