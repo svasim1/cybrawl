@@ -14,7 +14,7 @@ public class PlayerHandler : MonoBehaviour
     public float FloatHealthL;
     public string PlayerHandler11131;
 
-    void Update()
+    void FixedUpdate()
     {
 
         HandleHealth();
@@ -50,7 +50,17 @@ public class PlayerHandler : MonoBehaviour
     }
 
     void NextLevel(){
-        SceneManager.LoadScene($"PVP{LvlNum()}");
+        Time.timeScale = 0.20f;
+        Invoke("ResetTime", 0.5f);
+        Invoke("LoadNextLevel", 0.51f);
+    }
+
+    void ResetTime(){
+        Time.timeScale = 1f;
+    }
+
+    void LoadNextLevel(){
+        SceneManager.LoadScene("PVP" + LvlNum());
     }
 
     void Player1Win(){
@@ -82,7 +92,7 @@ public class PlayerHandler : MonoBehaviour
     }
 
     bool HasWon(int Score){
-        if (Score > 3){
+        if (Score > 2.5f){
             return true;
         }
         else{
