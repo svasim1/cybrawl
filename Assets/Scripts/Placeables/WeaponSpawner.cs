@@ -6,6 +6,7 @@ public class WeaponSpawner : MonoBehaviour
 {
     [SerializeField] public GameObject weaponPrefab;
     private GameObject weaponDisplay;
+    public string WeaponSpawner1313;
 
     private void Start()
     {

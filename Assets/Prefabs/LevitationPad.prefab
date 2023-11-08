@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4730072377935800815}
   - component: {fileID: 378837143684210158}
   - component: {fileID: 7240364046258283148}
-  - component: {fileID: 2829584092583256214}
+  - component: {fileID: 5393385893791792279}
   m_Layer: 6
   m_Name: LevitationPad
   m_TagString: Ground
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 66643bd8c0394804bb928cd1cd2ba3f4, type: 3}
-  m_Color: {r: 0.98765564, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -178,7 +178,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.01, y: 1.01}
   m_EdgeRadius: 0
---- !u!114 &2829584092583256214
+--- !u!114 &5393385893791792279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevitationForce: 1
+  LevitationPadTag: 
 --- !u!1 &4596370525620370324
 GameObject:
   m_ObjectHideFlags: 0

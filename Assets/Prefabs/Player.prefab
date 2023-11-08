@@ -164,13 +164,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5305903546408968211}
   - component: {fileID: 99686293639225298}
-  - component: {fileID: 3672451035394188599}
   - component: {fileID: 9013010866469741329}
   - component: {fileID: 5412373980594496011}
   - component: {fileID: 1426632757595665340}
   - component: {fileID: 1924223764878162102}
   - component: {fileID: 1803452846146284811}
-  - component: {fileID: 6575718430154237119}
+  - component: {fileID: 7472029436989070895}
+  - component: {fileID: 2913798954227381753}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -248,37 +248,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3672451035394188599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8431448873809617635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0c70a53a54f47146a5658e4019585b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GroundCheck: {fileID: 3175247623538236191}
-  WallCheck: {fileID: 0}
-  speed: 8
-  JumpForce: 16
-  IsGroundedBool: 0
-  IsTouchingWall: 0
-  inputNameHorizontal: P1 Horizontal
-  inputNameVertical: P1 Vertical
-  fireButton: P1 Fire1
-  SecondJump: 0
-  DBTrue: 0
-  LastOnGround: 0
-  facingRight: 1
-  IsGrounded: 0
-  IsMoving: 0
-  OnWall: 0
-  IsFalling: 0
-  IsJumping: 0
-  Movement: {x: 0, y: 0}
 --- !u!114 &9013010866469741329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +387,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6575718430154237119
+--- !u!114 &7472029436989070895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431448873809617635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c70a53a54f47146a5658e4019585b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GroundCheck: {fileID: 3175247623538236191}
+  WallCheck: {fileID: 0}
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  speed: 8
+  JumpForce: 16
+  IsGroundedBool: 0
+  IsTouchingWall: 0
+  inputNameHorizontal: P1 Horizontal
+  inputNameVertical: P1 Vertical
+  fireButton: P1 Fire1
+  SecondJump: 0
+  DBTrue: 0
+  LastOnGround: 0
+  facingRight: 1
+  IsGrounded: 0
+  IsMoving: 0
+  OnWall: 0
+  IsFalling: 0
+  IsJumping: 0
+  Movement: {x: 0, y: 0}
+--- !u!114 &2913798954227381753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -431,6 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  hi: 0
 --- !u!1 &8752820226622872937
 GameObject:
   m_ObjectHideFlags: 0

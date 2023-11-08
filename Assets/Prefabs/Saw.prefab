@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5923102627110690091}
   - component: {fileID: 9072987986027990306}
-  - component: {fileID: 7809214519898458974}
   - component: {fileID: 2977810979907660698}
+  - component: {fileID: 615372889914225268}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Untagged
@@ -86,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7809214519898458974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7940220235063877568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5039b053c80e3d4ba88f4d26c205691, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1e+15
-  rotationSpeed: -5
 --- !u!58 &2977810979907660698
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -135,3 +121,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.4
+--- !u!114 &615372889914225268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940220235063877568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5039b053c80e3d4ba88f4d26c205691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1e+12
+  rotationSpeed: -5
+  saw: 

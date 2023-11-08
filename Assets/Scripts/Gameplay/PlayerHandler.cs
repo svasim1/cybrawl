@@ -12,6 +12,7 @@ public class PlayerHandler : MonoBehaviour
     private bool AlreadyWon = false;
     public float FloatHealthR;
     public float FloatHealthL;
+    public string PlayerHandler11131;
 
     void Update()
     {
@@ -102,14 +103,14 @@ public class PlayerHandler : MonoBehaviour
 
         if (player1Obj != null) {
             FloatHealthL = player1Obj.GetComponent<TargetableObject>().health;
-            Debug.Log("Player 1 Health: " + FloatHealthL);
+            //Debug.Log("Player 1 Health: " + FloatHealthL);
         } else {
             FloatHealthL = 0;
         }
 
         if (player2Obj != null) {
             FloatHealthR = player2Obj.GetComponent<TargetableObject>().health;
-            Debug.Log("Player 2 Health: " + FloatHealthR);
+            //Debug.Log("Player 2 Health: " + FloatHealthR);
         } else {
             FloatHealthR = 0;
         }

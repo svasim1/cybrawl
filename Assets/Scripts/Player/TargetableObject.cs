@@ -5,6 +5,7 @@ using UnityEngine;
 public class TargetableObject : MonoBehaviour
 {
     public int health = 100;
+    public float hi;
 
     public void TakeDamage(float damage)
     {

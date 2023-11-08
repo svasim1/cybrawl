@@ -6,6 +6,7 @@ public class LevitationPad : MonoBehaviour
 {
 
     public float LevitationForce;
+    public string LevitationPadTag;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

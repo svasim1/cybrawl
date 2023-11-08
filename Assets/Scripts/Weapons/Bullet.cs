@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     // The damage the bullet deals, set by the bulletDamage in specific weapon script
     internal float damage;
+    public string bullet;
 
     void Start()
     {

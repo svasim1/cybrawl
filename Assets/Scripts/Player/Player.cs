@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [Header("Player")]
     public Transform GroundCheck;
     public Transform WallCheck;
+    public LayerMask GroundLayer;
 
     [Header("Player Movement")]
     [SerializeField] private float speed;

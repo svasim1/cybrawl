@@ -6,6 +6,7 @@ public class Saw : MonoBehaviour
 {
     public float damage;
     public float rotationSpeed = 1f;
+    public string saw;
 
     void OnCollisionEnter2D(Collision2D collision) {
 
