@@ -115,7 +115,7 @@ public class PlayerHandler : MonoBehaviour
             FloatHealthR = 0;
         }
 
-        HealthR.fillAmount = FloatHealthR / 50f;
-        HealthL.fillAmount = FloatHealthL / 50f;
+        HealthR.fillAmount = FloatHealthR / 100f;
+        HealthL.fillAmount = FloatHealthL / 100f;
     }
 }
