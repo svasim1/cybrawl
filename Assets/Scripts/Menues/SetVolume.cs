@@ -15,20 +15,20 @@ public class SetVolume : MonoBehaviour {
     }
     public void SetMaster (float sliderValue)
     {
-        // Set the volume of the Master mixer
+        // Set the volume of the Master mixer to the value of the slider
         mixer.SetFloat("MasterVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MasterVol", sliderValue);
     }
     public void SetMusic (float sliderValue)
     {
-        // Set the volume of the Music mixer group
+        // Set the volume of the Music mixer group to the value of the slider
         mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MusicVol", sliderValue);
     }
 
     public void SetSFX (float sliderValue)
     {
-        // Set the volume of the SFX mixer group
+        // Set the volume of the SFX mixer group to the value of the slider
         mixer.SetFloat("SFXVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("SFXVol", sliderValue);
     }
