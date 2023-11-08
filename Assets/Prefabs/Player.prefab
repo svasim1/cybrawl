@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3175247623538236191}
   - component: {fileID: 12714626833233099}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4052555028909442803}
   - component: {fileID: 2851261832468981786}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WeaponCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponHolder: {fileID: 8752820226622872937}
   hasWeapon: 0
+  spawnCooldown: 20
 --- !u!50 &5412373980594496011
 Rigidbody2D:
   serializedVersion: 4
@@ -429,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 898f760e55c190143a2e98ba8276430e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
 --- !u!1 &8752820226622872937
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9139014976705092563}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
