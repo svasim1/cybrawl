@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raySpawnPoint: {fileID: 5548367619685107612}
+  bulletTrailPrefab: {fileID: 5811374799250043669, guid: 05145b11db4986c4ca50d9a68f07950e, type: 3}
+  impactEffect: {fileID: 7940220235063877568, guid: d592f78065f7e7742b1980fed1d69924, type: 3}
   rayDamage: 15
   rayDistance: 100
   ammo: 8
