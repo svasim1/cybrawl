@@ -8,14 +8,19 @@ public class ShutterController : MonoBehaviour
 
     private GameObject ShutterO;
     private GameObject ShutterU;
-    public bool dead = false;
+    private bool Replaced = false;
+    public bool NextLevelBool = false;
     public bool ShutterOpened = false;
     public bool HasOpened = false;
+    private int j = 0;
+    private int p = 0;
+
 
     void Start()
     {
         ShutterU = GameObject.Find("ShutterU");
         ShutterO = GameObject.Find("ShutterO");
+
     }
 
     void OnEnable()
@@ -31,30 +36,31 @@ public class ShutterController : MonoBehaviour
 
     private void FixedUpdate()
     {   
-        if(ShutterU.transform.position.y < -20 && HasOpened == false){
-            ShutterOpened = true;
-            HasOpened = true;
-        }
-        if(ShutterOpened != true){
+        NextLevelBool = GameObject.Find("PlayerHandler").GetComponent<PlayerHandler>().NextLevelBool;
+        
+        if(HasOpened == false && p < 60){
+            p++;
             ShutterOpen();
         }
-        if(dead){
+
+        if(NextLevelBool == true && j < 20){
+            j++;
             ShutterClose();
         }
     }
 
     void ShutterOpen(){
-        // if(ShutterU.transform.position.y == 0 || ShutterO.transform.position.y == 0){
-        //     return;
-        // }
+
         ShutterU.transform.position += new Vector3(0, -0.3f, 0);
         ShutterO.transform.position += new Vector3(0, 0.3f, 0);
+
+
     }
 
     void ShutterClose(){
-        if(ShutterU.transform.position.y < -1.5 || ShutterO.transform.position.y > 1){
-            ShutterU.transform.position += new Vector3(0, 0.3f, 0);
-            ShutterO.transform.position += new Vector3(0, -0.3f, 0);
-        }
+        
+        ShutterU.transform.position += new Vector3(0, 0.9f, 0);
+        ShutterO.transform.position += new Vector3(0, -0.9f, 0);
+
     }
 }

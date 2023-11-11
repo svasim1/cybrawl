@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PVP_Maps/PVP2.unity
     guid: bc02cbcf781b82b4791cf3652f34e9b0
+  - enabled: 1
+    path: Assets/Scenes/PVP_Maps/PVP3.unity
+    guid: e7e084320fe3dd34c9772497aa94a85e
   m_configObjects: {}
