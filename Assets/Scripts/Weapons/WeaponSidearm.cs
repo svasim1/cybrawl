@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponSidearm : MonoBehaviour
@@ -7,12 +8,16 @@ public class WeaponSidearm : MonoBehaviour
 
     [Header("Weapon")]
     public Transform raySpawnPoint;
+    public GameObject bulletTrailPrefab;
+    public GameObject impactEffect;
 
     [Header("Weapon Stats")]
     public float rayDamage = 15f;
     public float rayDistance = 10f;
+
+    private TargetableObject player;
     public int ammo = 8;
-    [SerializeField] private string fireButton; 
+    [SerializeField] private string fireButton;
 
     private void Start()
     {
@@ -25,7 +30,7 @@ public class WeaponSidearm : MonoBehaviour
     }
 
     void Update()
-    {   
+    {
         // Shoot if fireBUtton is pressed
         if (Input.GetButtonDown(fireButton))
         {
@@ -37,6 +42,12 @@ public class WeaponSidearm : MonoBehaviour
     {
         Debug.Log("Ray shot");
 
+        // Decrease ammo by one
+        ammo--;
+
+        // Play the shoot sound
+        ShootSound();
+
         // Create a LayerMask that includes all layers except PassThrough
         int layerMask = ~(1 << LayerMask.NameToLayer("PassThrough"));
 
@@ -46,16 +57,20 @@ public class WeaponSidearm : MonoBehaviour
         // Create a ray
         RaycastHit2D hit = Physics2D.Raycast(raySpawnPoint.position, rayDirection, rayDistance, layerMask);
 
-        if (hit == GameObject.FindGameObjectWithTag("Player"))
+        // Check if the ray hit something
+        if (hit)
         {
-            // Deal damage to the player
-            hit.transform.GetComponent<TargetableObject>().TakeDamage(rayDamage);
-        }
-        
-        Debug.Log(hit.transform.name + " was hit by the ray");
+            player = hit.transform.GetComponent<TargetableObject>();
+            if (player != null)
+            {
+                // Deal damage to the player
+                player.TakeDamage(rayDamage);
+                Debug.Log(hit.transform.name + " was hit by the ray");
+            }
 
-        // Decrease ammo by one
-        ammo--;
+            // Create the impact effect
+            //Instantiate(impactEffect, hit.point, Quaternion.identity);
+        }
 
         // Destroy the weapon when out of ammo
         if (ammo == 0)
@@ -76,5 +91,12 @@ public class WeaponSidearm : MonoBehaviour
         {
             Debug.Log("Player has no weapon");
         }
+    }
+
+    void ShootSound()
+    {
+        // Get the AudioSource component and play the shoot sound
+        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Shoot").GetComponent<AudioSource>().Play();
+        Debug.Log("Played shoot sound");
     }
 }
