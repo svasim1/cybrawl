@@ -94,7 +94,7 @@ public class PlayerHandler : MonoBehaviour
     }
 
     bool HasWon(int Score){
-        if (Score > 2.5f){
+        if (Score > 12f){
             return true;
         }
         else{

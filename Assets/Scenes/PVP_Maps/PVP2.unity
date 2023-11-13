@@ -638,6 +638,7 @@ MonoBehaviour:
   FloatHealthR: 0
   FloatHealthL: 0
   PlayerHandler11131: 
+  NextLevelBool: 0
 --- !u!4 &1203572442
 Transform:
   m_ObjectHideFlags: 0
