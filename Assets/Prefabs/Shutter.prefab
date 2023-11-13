@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dd3b2cb7362774d93676c93a1fd1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dead: 0
+  NextLevelBool: 0
   ShutterOpened: 0
   HasOpened: 0
 --- !u!1 &1509551261289720721
@@ -378,7 +378,7 @@ Animator:
   m_GameObject: {fileID: 4492998565974376522}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a6e933bdf2330984bba0f8b87ee054ed, type: 2}
+  m_Controller: {fileID: 9100000, guid: b5ac5fc1baa802041a2cd9843a5de1df, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 7755680210664579340}
   - component: {fileID: 2018487492996505315}
   - component: {fileID: 6185631788518405345}
+  - component: {fileID: 2859701292804204273}
   m_Layer: 0
   m_Name: ScoreL
   m_TagString: Untagged
@@ -495,3 +496,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2859701292804204273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5289254082498437847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eda06f14bffbc54a902c63f6933c5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
