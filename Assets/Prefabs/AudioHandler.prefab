@@ -33,7 +33,11 @@ Transform:
   - {fileID: 3113313449564066512}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &5043205763971345097
+=======
+--- !u!1 &2729443114530567076
+>>>>>>> a551c489a0c4f1c5979c974a6e6349037a36282f
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,8 +45,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1194718603542679342}
   - component: {fileID: 6908886750059037299}
+=======
+  - component: {fileID: 7791973199328532625}
+  - component: {fileID: 8639386985246047803}
+>>>>>>> a551c489a0c4f1c5979c974a6e6349037a36282f
   m_Layer: 0
   m_Name: Shoot
   m_TagString: Untagged
@@ -50,13 +59,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &1194718603542679342
+=======
+--- !u!4 &7791973199328532625
+>>>>>>> a551c489a0c4f1c5979c974a6e6349037a36282f
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 5043205763971345097}
+=======
+  m_GameObject: {fileID: 2729443114530567076}
+>>>>>>> a551c489a0c4f1c5979c974a6e6349037a36282f
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -65,13 +82,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3113313449564066512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!82 &6908886750059037299
+=======
+--- !u!82 &8639386985246047803
+>>>>>>> a551c489a0c4f1c5979c974a6e6349037a36282f
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 5043205763971345097}
+=======
+  m_GameObject: {fileID: 2729443114530567076}
+>>>>>>> a551c489a0c4f1c5979c974a6e6349037a36282f
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4061075177883837808, guid: 6a29f7bf10f8b124ea3ec35fc674eb58, type: 2}
@@ -319,7 +344,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
   - {fileID: 1194718603542679342}
+=======
+  - {fileID: 7791973199328532625}
+>>>>>>> a551c489a0c4f1c5979c974a6e6349037a36282f
   m_Father: {fileID: 6978089081823806973}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &5389671050233335843
