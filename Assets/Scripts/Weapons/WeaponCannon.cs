@@ -16,7 +16,7 @@ public class WeaponCannon : MonoBehaviour
     public float fireRate = 0.5f;
     public float lifeTime = 10f;
     public int ammo = 2;
-    [SerializeField] private string fireButton; 
+    [SerializeField] private string fireButton;
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class WeaponCannon : MonoBehaviour
     }
 
     void Update()
-    {   
+    {
         // Shoot if fireBUtton is pressed
         if (Input.GetButtonDown(fireButton))
         {
@@ -40,6 +40,9 @@ public class WeaponCannon : MonoBehaviour
     void Shoot()
     {
         Debug.Log("Cannon shot");
+
+        // Play the shoot sound
+        ShootSound();
 
         // Determine the direction of the bullet based on the player's facing direction
         Vector2 bulletDirection = transform.root.GetComponent<Player>().facingRight ? Vector2.right : Vector2.left;
@@ -84,5 +87,11 @@ public class WeaponCannon : MonoBehaviour
         {
             Debug.Log("Player has no weapon");
         }
+    }
+    void ShootSound()
+    {
+        // Get the AudioSource component and play the shoot sound
+        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Cannon").GetComponent<AudioSource>().Play();
+        Debug.Log("Played shoot sound");
     }
 }

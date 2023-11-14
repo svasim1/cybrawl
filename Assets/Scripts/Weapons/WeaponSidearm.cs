@@ -8,8 +8,6 @@ public class WeaponSidearm : MonoBehaviour
 
     [Header("Weapon")]
     public Transform raySpawnPoint;
-    public GameObject bulletTrailPrefab;
-    public GameObject impactEffect;
 
     [Header("Weapon Stats")]
     public float rayDamage = 15f;
@@ -67,9 +65,6 @@ public class WeaponSidearm : MonoBehaviour
                 player.TakeDamage(rayDamage);
                 Debug.Log(hit.transform.name + " was hit by the ray");
             }
-
-            // Create the impact effect
-            //Instantiate(impactEffect, hit.point, Quaternion.identity);
         }
 
         // Destroy the weapon when out of ammo
@@ -96,7 +91,7 @@ public class WeaponSidearm : MonoBehaviour
     void ShootSound()
     {
         // Get the AudioSource component and play the shoot sound
-        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Shoot").GetComponent<AudioSource>().Play();
+        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Sidearm").GetComponent<AudioSource>().Play();
         Debug.Log("Played shoot sound");
     }
 }

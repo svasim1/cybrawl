@@ -18,11 +18,19 @@ public class TargetableObject : MonoBehaviour
         {
             Die();
         }
+
+        // Get the AudioSource component and play the shoot sound
+        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Hurt").GetComponent<AudioSource>().Play();
+        Debug.Log("Played hurt sound");
     }
 
     private void Die()
     {
         // Destroy object with TargetableObject.cs
         Destroy(gameObject);
+
+        // Get the AudioSource component and play the shoot sound
+        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Death").GetComponent<AudioSource>().Play();
+        Debug.Log("Played death sound");
     }
 }

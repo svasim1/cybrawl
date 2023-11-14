@@ -37,7 +37,10 @@ public class WeaponTestGun : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("Cannon shot");
+        Debug.Log("TestGun shot");
+
+        // Play the shoot sound
+        ShootSound();
 
         // Determine the direction of the bullet based on the player's facing direction
         Vector2 bulletDirection = transform.root.GetComponent<Player>().facingRight ? Vector2.right : Vector2.left;
@@ -59,5 +62,11 @@ public class WeaponTestGun : MonoBehaviour
 
         // Destroy the bullet after lifeTime
         Destroy(bullet, lifeTime);
+    }
+    void ShootSound()
+    {
+        // Get the AudioSource component and play the shoot sound
+        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Cannon").GetComponent<AudioSource>().Play();
+        Debug.Log("Played shoot sound");
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6213905429293728493}
   - component: {fileID: 6926824020579037785}
   - component: {fileID: 511971076787528479}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WeaponSpawner
   m_TagString: WeaponSpawner
   m_Icon: {fileID: 0}
