@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4052555028909442803}
   - component: {fileID: 2851261832468981786}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: WeaponCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

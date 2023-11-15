@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponCannon : MonoBehaviour
+public class WeaponTestGun : MonoBehaviour
 {
 
     [Header("Weapon")]
@@ -11,11 +11,9 @@ public class WeaponCannon : MonoBehaviour
     public Sprite bulletSprite;
 
     [Header("Weapon Stats")]
-    public float bulletSpeed = 1f;
-    public float bulletDamage = 50f;
-    public float fireRate = 0.5f;
+    public float bulletSpeed = 10f;
+    public float bulletDamage = 100f;
     public float lifeTime = 10f;
-    public int ammo = 2;
     [SerializeField] private string fireButton;
 
     private void Start()
@@ -39,7 +37,7 @@ public class WeaponCannon : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("Cannon shot");
+        Debug.Log("TestGun shot");
 
         // Play the shoot sound
         ShootSound();
@@ -64,29 +62,6 @@ public class WeaponCannon : MonoBehaviour
 
         // Destroy the bullet after lifeTime
         Destroy(bullet, lifeTime);
-
-        // Decrease ammo by one
-        ammo--;
-
-        // Destroy the weapon when out of ammo
-        if (ammo == 0)
-        {
-            OutOfAmmo();
-        }
-    }
-
-    // Destroy the weapon when out of ammo
-    void OutOfAmmo()
-    {
-        Debug.Log("Out of ammo");
-        Destroy(gameObject);
-
-        // Set hasWeapon to false on the player
-        GetComponentInParent<WeaponCollect>().hasWeapon = false;
-        if (GetComponentInParent<WeaponCollect>().hasWeapon == false)
-        {
-            Debug.Log("Player has no weapon");
-        }
     }
     void ShootSound()
     {
