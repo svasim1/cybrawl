@@ -405,7 +405,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 8
-  JumpForce: 16
+  JumpForce: 17
   IsGroundedBool: 0
   IsTouchingWall: 0
   inputNameHorizontal: P1 Horizontal
