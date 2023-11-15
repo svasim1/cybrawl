@@ -50,6 +50,8 @@ public class WeaponCannon : MonoBehaviour
         // Create a bullet
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
+        // Set the size of the bullet to be 3 times larger
+        bullet.transform.localScale *= 2;
         // Set the velocity of the bullet
         bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * bulletSpeed;
 

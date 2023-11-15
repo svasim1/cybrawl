@@ -99,8 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raySpawnPoint: {fileID: 5548367619685107612}
-  bulletTrailPrefab: {fileID: 5811374799250043669, guid: 05145b11db4986c4ca50d9a68f07950e, type: 3}
-  impactEffect: {fileID: 7940220235063877568, guid: d592f78065f7e7742b1980fed1d69924, type: 3}
   rayDamage: 15
   rayDistance: 100
   ammo: 8
@@ -130,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 7641947510793962016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.255, y: 0.072, z: 0}
+  m_LocalPosition: {x: 0.366, y: 0.118, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
