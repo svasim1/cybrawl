@@ -24,7 +24,7 @@ public class TargetableObject : MonoBehaviour
         Debug.Log("Played hurt sound");
     }
 
-    private void Die()
+    public void Die()
     {
         // Destroy object with TargetableObject.cs
         Destroy(gameObject);
