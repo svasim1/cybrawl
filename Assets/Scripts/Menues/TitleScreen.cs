@@ -14,7 +14,7 @@ public class TitleScreen : MonoBehaviour
     // Play the tutorial
     public void PlayTutorial()
     {
-        SceneManager.LoadSceneAsync("TutorialLevel");
+        SceneManager.LoadSceneAsync("Tutorial1");
     }
 
     // Quit the game
