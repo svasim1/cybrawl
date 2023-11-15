@@ -462,7 +462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9013010866469741329, guid: b81704c77f6a5914c886354729ab561c, type: 3}
       propertyPath: spawnCooldown
-      value: 20
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         // Check for player input
         Run();
         Jump();
+        CheckWeapon();
 
         // Check if the player is touching the ground to chage LastOnGround
         if (IsGroundedBool == true)
@@ -110,6 +111,22 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce);
                 SecondJump = false;
             }
+        }
+    }
+
+    void CheckWeapon(){
+        GameObject Weapon;
+        Weapon = transform.Find("WeaponHolder").gameObject;
+        if (Weapon.transform.childCount > 0 && Movement.y < 0) {
+            rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce * -1);
+            Destroy(Weapon.transform.GetChild(0).gameObject);
+            WeaponCollect weaponCollect = GetComponent<WeaponCollect>();
+            Debug.Log(weaponCollect);
+            if (weaponCollect != null) {
+                weaponCollect.hasWeapon = false;
+            }
+        } else {
+            Debug.Log("Weapon has no children");
         }
     }
 
