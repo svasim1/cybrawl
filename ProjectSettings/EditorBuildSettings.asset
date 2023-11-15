@@ -23,4 +23,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PVP_Maps/PVP3.unity
     guid: e7e084320fe3dd34c9772497aa94a85e
+  - enabled: 1
+    path: Assets/Scenes/Tutorial_Maps/Tutorial1.unity
+    guid: 3c1200fc81e3e004d949cfa70b2b4a18
+  - enabled: 1
+    path: Assets/Scenes/Tutorial_Maps/Tutorial2.unity
+    guid: 4b8c734d1ea85d140a4c6e15159ec735
+  - enabled: 1
+    path: Assets/Scenes/Tutorial_Maps/Tutorial3.unity
+    guid: d39fc7f1ed11477488c4a5df0e793df1
+  - enabled: 1
+    path: Assets/Scenes/Tutorial_Maps/Tutorial4.unity
+    guid: 382e18026530b424c8292b675f8c91d2
+  - enabled: 1
+    path: Assets/Scenes/Tutorial_Maps/Tutorial5.unity
+    guid: 26fd88b6a421fda499db443287a02537
+  - enabled: 1
+    path: Assets/Scenes/Tutorial_Maps/Tutorial7.unity
+    guid: f101ed64f0f11424e9de483ca92510c7
   m_configObjects: {}
