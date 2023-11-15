@@ -405,7 +405,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 8
-  JumpForce: 16
+  JumpForce: 17
   IsGroundedBool: 0
   IsTouchingWall: 0
   inputNameHorizontal: P1 Horizontal
@@ -434,7 +434,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  hi: 0
 --- !u!1 &8752820226622872937
 GameObject:
   m_ObjectHideFlags: 0
