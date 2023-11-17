@@ -10,6 +10,7 @@ public class PlayerHandler : MonoBehaviour
     private Transform Player1;
     private Transform Player2;
     private bool AlreadyWon = false;
+    public bool NextLevelBool = false;
     public float FloatHealthR;
     public float FloatHealthL;
     public string PlayerHandler11131;
@@ -26,19 +27,23 @@ public class PlayerHandler : MonoBehaviour
             AlreadyWon = true;
             Player1Win();
             Debug.Log("Player 1 Wins!");
-            NextLevel();
+            NextLevelBool = true;
+            Invoke("NextLevel", 0.6f);
         }
         if(Player2Obj != null && Player1Obj == null && AlreadyWon == false){
             AlreadyWon = true;
             Player2Win();
             Debug.Log("Player 2 Wins!");
-            NextLevel();
+            NextLevelBool = true;
+            Invoke("NextLevel", 0.6f);
         }
         if(Player1Obj == null && Player2Obj == null && AlreadyWon == false){
             AlreadyWon = true;
             Draw();
             Debug.Log("Draw!");
-            NextLevel();
+            NextLevelBool = true;
+            Invoke("NextLevel", 0.6f);
+            
         }
 
     }
