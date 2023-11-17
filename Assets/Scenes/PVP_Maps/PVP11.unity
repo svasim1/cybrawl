@@ -245,6 +245,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 378837143684210158, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 378837143684210158, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_Offset.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728988445282594428, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -111
+      objectReference: {fileID: 0}
     - target: {fileID: 3340652901719212877, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14
@@ -288,6 +300,14 @@ PrefabInstance:
     - target: {fileID: 3676289590390684612, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
       propertyPath: m_Name
       value: LevitationPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212004991411468415, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212004991411468415, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -735,6 +755,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 378837143684210158, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 378837143684210158, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_Offset.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728988445282594428, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -110
+      objectReference: {fileID: 0}
     - target: {fileID: 3340652901719212877, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14
@@ -778,6 +810,14 @@ PrefabInstance:
     - target: {fileID: 3676289590390684612, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
       propertyPath: m_Name
       value: LevitationPad (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212004991411468415, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212004991411468415, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
