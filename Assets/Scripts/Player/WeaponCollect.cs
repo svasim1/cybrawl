@@ -25,6 +25,10 @@ public class WeaponCollect : MonoBehaviour
             newWeapon.transform.localScale = Vector3.one;
             newWeapon.SetActive(true);
 
+            // Play PickUp sound
+            GameObject.Find("AudioHandler").transform.Find("SFX").Find("PickUp").GetComponent<AudioSource>().Play();
+            Debug.Log("Played pickup sound");
+
             // Set hasWeapon to true
             hasWeapon = true;
 

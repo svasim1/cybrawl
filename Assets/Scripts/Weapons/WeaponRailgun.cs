@@ -91,7 +91,7 @@ public class WeaponRailgun : MonoBehaviour
     void ShootSound()
     {
         // Get the AudioSource component and play the shoot sound
-        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Sidearm").GetComponent<AudioSource>().Play();
+        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Railgun").GetComponent<AudioSource>().Play();
         Debug.Log("Played shoot sound");
     }
 }

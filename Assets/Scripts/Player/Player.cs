@@ -110,6 +110,9 @@ public class Player : MonoBehaviour
                 Debug.Log("Jump2");
                 rb.velocity = new Vector2(rb.velocity.x, Movement.y * JumpForce);
                 SecondJump = false;
+
+                // Play the airboost sound
+                GameObject.Find("AudioHandler").transform.Find("SFX").Find("Airboost").GetComponent<AudioSource>().Play();
             }
         }
     }
@@ -122,6 +125,10 @@ public class Player : MonoBehaviour
             Destroy(Weapon.transform.GetChild(0).gameObject);
             WeaponCollect weaponCollect = GetComponent<WeaponCollect>();
             Debug.Log(weaponCollect);
+
+            // Play the consume sound
+            GameObject.Find("AudioHandler").transform.Find("SFX").Find("Consume").GetComponent<AudioSource>().Play();
+
             if (weaponCollect != null) {
                 weaponCollect.hasWeapon = false;
             }
