@@ -1407,7 +1407,7 @@ PrefabInstance:
     - target: {fileID: 6926824020579037785, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
       propertyPath: weaponPrefab
       value: 
-      objectReference: {fileID: 1004825729370747848, guid: eac192c03c6090c42be82c0fbc222e0a, type: 3}
+      objectReference: {fileID: 1004825729370747848, guid: 708415cf2dd37c94995b8b6b455a9bdb, type: 3}
     - target: {fileID: 7967658544570257594, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
       propertyPath: m_Name
       value: WeaponSpawner (4)

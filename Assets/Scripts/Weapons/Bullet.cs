@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour
     // The damage the bullet deals, set by the bulletDamage in specific weapon script
     internal float damage;
 
+    internal float knockback;
+
+
     void Start()
     {
         // Ignore collisions between the bullet and the objects with the layer PassThrough
