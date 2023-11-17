@@ -55,30 +55,37 @@ public class PlayerHandler : MonoBehaviour
     }
 
     void NextLevel(){
-        SceneManager.LoadScene($"PVP{LvlNum()}");
+        if(HasWon(GameData.P1Score) || HasWon(GameData.P2Score)){
+            Debug.Log("WIN SCREEN WILL BE LOADED");
+            SceneManager.LoadScene("WinScreen");
+        }
+        else{
+            Debug.Log("PVP LEVEL WILL BE LOADED");
+            SceneManager.LoadScene($"PVP{LvlNum()}");
+        }
     }
 
     void Player1Win(){
         GameData.P1Score++;
         Debug.Log("Player 1 Score: " + GameData.P1Score);
-        if(HasWon(GameData.P1Score)){
-            Debug.Log("Player 1 has won the game!");
-        }
-        else{
-            Debug.Log("Player 1 has not won the game yet!");
-        }
+        // if(HasWon(GameData.P1Score)){
+        //     Debug.Log("Player 1 has won the game!");
+        // }
+        // else{
+        //     Debug.Log("Player 1 has not won the game yet!");
+        // }
     }
 
     void Player2Win(){
         GameData.P2Score++;
         Debug.Log("Player 2 Score: " + GameData.P2Score);
-        if(HasWon(GameData.P2Score)){
-            Debug.Log("Player 2 has won the game!");
-            Reset();
-        }
-        else{
-            Debug.Log("Player 2 has not won the game yet!");
-        }
+        // if(HasWon(GameData.P2Score)){
+        //     Debug.Log("Player 2 has won the game!");
+        //     Reset();
+        // }
+        // else{
+        //     Debug.Log("Player 2 has not won the game yet!");
+        // }
     }
 
     void Draw(){
@@ -87,7 +94,7 @@ public class PlayerHandler : MonoBehaviour
     }
 
     bool HasWon(int Score){
-        if (Score > 3){
+        if (Score > 11){
             return true;
         }
         else{
