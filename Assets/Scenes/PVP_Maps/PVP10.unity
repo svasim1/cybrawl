@@ -1188,6 +1188,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7472029436989070895, guid: b81704c77f6a5914c886354729ab561c, type: 3}
+      propertyPath: fireButton
+      value: P2 Fire1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472029436989070895, guid: b81704c77f6a5914c886354729ab561c, type: 3}
+      propertyPath: inputNameVertical
+      value: P2 Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472029436989070895, guid: b81704c77f6a5914c886354729ab561c, type: 3}
+      propertyPath: inputNameHorizontal
+      value: P2 Horizontal
+      objectReference: {fileID: 0}
     - target: {fileID: 8431448873809617635, guid: b81704c77f6a5914c886354729ab561c, type: 3}
       propertyPath: m_Name
       value: Player2
