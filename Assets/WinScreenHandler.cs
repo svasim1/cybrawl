@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WinScreenHandler : MonoBehaviour
 {
-    
+
     public GameObject winLeft; // Reference to the winLeft gameObject
     public GameObject winRight; // Reference to the winRight gameObject
     public GameObject Player; // Reference to the Player gameObject
@@ -22,6 +22,13 @@ public class WinScreenHandler : MonoBehaviour
         Debug.Log("P2Score: " + GameData.P2Score);
         Debug.Log("Player: " + Player);
         Debug.Log("TauntNum: " + animator.GetInteger("TauntNum"));
+
+        // Mute music
+        GameObject.Find("AudioHandler").transform.Find("Music").GetComponent<AudioSource>().mute = true;
+        // Play the victoru sound
+        GameObject.Find("AudioHandler").transform.Find("SFX").Find("Victory").GetComponent<AudioSource>().Play();
+        GameObject.Find("AudioHandler").transform.Find("SFX").Find("VictoryVoice").GetComponent<AudioSource>().Play();
+        Debug.Log("Played shoot sound");
     }
     // Update is called once per frame
     void Update()
@@ -30,14 +37,18 @@ public class WinScreenHandler : MonoBehaviour
         {
             winLeft.SetActive(false);
             winRight.SetActive(true);
-            if(!IsFlipped){
+            if (!IsFlipped)
+            {
                 Flip();
                 IsFlipped = true;
             }
-            
+
         }
         else
         {
+            // Set color of player sprite to #FF0000
+            Player.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+
             winLeft.SetActive(true);
             winRight.SetActive(false);
         }
