@@ -42,7 +42,7 @@ public class PlayerHandler : MonoBehaviour
             Draw();
             Debug.Log("Draw!");
             NextLevelBool = true;
-            Invoke("NextLevel", 0.6f);
+            Invoke("NextLevel", 1.2f);
             
         }
 
