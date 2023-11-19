@@ -8,7 +8,6 @@ public class WeaponTestGun : MonoBehaviour
     [Header("Weapon")]
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
-    public Sprite bulletSprite;
 
     [Header("Weapon Stats")]
     public float bulletSpeed = 10f;
@@ -53,9 +52,6 @@ public class WeaponTestGun : MonoBehaviour
 
         // Apply bulletDamage to the bullet
         bullet.GetComponent<Bullet>().damage = bulletDamage;
-
-        // Apply bulletSprite to the bullet
-        bullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
 
         // Ignore collisions between the bullet and the objects with the layer PassThrough
         bullet.layer = LayerMask.NameToLayer("PassThrough");
