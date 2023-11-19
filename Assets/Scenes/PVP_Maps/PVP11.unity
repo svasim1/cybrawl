@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6926824020579037785, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 1004825729370747848, guid: 0fe766d2d2427814298dbfb678f4662b, type: 3}
     - target: {fileID: 7967658544570257594, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
       propertyPath: m_Name
       value: WeaponSpawner (1)
@@ -228,6 +232,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6926824020579037785, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 1004825729370747848, guid: ae0e6445847f7d7489e8607e92868135, type: 3}
     - target: {fileID: 7967658544570257594, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
       propertyPath: m_Name
       value: WeaponSpawner
@@ -882,7 +890,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -32768
-  m_Sprite: {fileID: 21300000, guid: 8315b21c95a80be40b6453a0ae3c4496, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b19073a478ec694e8485df8adf69b5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -902,8 +910,8 @@ Transform:
   m_GameObject: {fileID: 1461836441}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1048,6 +1056,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6926824020579037785, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 1004825729370747848, guid: 0fe766d2d2427814298dbfb678f4662b, type: 3}
     - target: {fileID: 7967658544570257594, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
       propertyPath: m_Name
       value: WeaponSpawner (2)
@@ -4591,6 +4603,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6926824020579037785, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 1004825729370747848, guid: 0fe766d2d2427814298dbfb678f4662b, type: 3}
     - target: {fileID: 7967658544570257594, guid: 43fb9621caa94574aa373ff055bf2ce9, type: 3}
       propertyPath: m_Name
       value: WeaponSpawner (3)
