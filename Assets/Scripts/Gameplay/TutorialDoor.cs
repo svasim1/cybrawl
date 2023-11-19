@@ -9,14 +9,14 @@ public class TutorialDoor : MonoBehaviour
     private GameObject Enemies;
     public GameObject FinishPopup;
     public Boolean lastDoor = false;
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Triggered");
         if (other.CompareTag("Player") && canProceed())
         {
             // If the player enters the trigger, load the next scene unless it's the last door
-            if(!lastDoor)
+            if (!lastDoor)
             {
                 Debug.Log("Loading next scene");
                 SceneManager.LoadScene(nextSceneName);
@@ -25,17 +25,20 @@ public class TutorialDoor : MonoBehaviour
             {
                 Finish();
             }
-            
+
         }
     }
 
-    public bool canProceed(){
+    public bool canProceed()
+    {
         Enemies = GameObject.Find("Enemies");
-        if(Enemies.transform.childCount == 0){
+        if (Enemies.transform.childCount == 0)
+        {
             Debug.Log("Can Proceed");
             return true;
         }
-        else{
+        else
+        {
             Debug.Log("Can't Proceed");
             return false;
         }
@@ -43,7 +46,14 @@ public class TutorialDoor : MonoBehaviour
 
     public void Finish()
     {
+        // Mute music
+        GameObject.Find("AudioHandler").transform.Find("Music").GetComponent<AudioSource>().mute = true;
+
+        // Show the finish popup
         FinishPopup.SetActive(true);
+
+        // Set the time scale to 0
+        Time.timeScale = 0;
 
         // Play the victory sound
         GameObject.Find("AudioHandler").transform.Find("SFX").Find("Victory").GetComponent<AudioSource>().Play();
