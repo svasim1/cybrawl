@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Set time scale to 1
+        Time.timeScale = 1;
+    }
+
     // Play the game
     public void PlayGame()
     {
