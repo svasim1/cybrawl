@@ -28,21 +28,21 @@ public class PlayerHandler : MonoBehaviour
             Player1Win();
             Debug.Log("Player 1 Wins!");
             NextLevelBool = true;
-            Invoke("NextLevel", 0.6f);
+            Invoke("NextLevel", 1.6f);
         }
         if(Player2Obj != null && Player1Obj == null && AlreadyWon == false){
             AlreadyWon = true;
             Player2Win();
             Debug.Log("Player 2 Wins!");
             NextLevelBool = true;
-            Invoke("NextLevel", 0.6f);
+            Invoke("NextLevel", 1.6f);
         }
         if(Player1Obj == null && Player2Obj == null && AlreadyWon == false){
             AlreadyWon = true;
             Draw();
             Debug.Log("Draw!");
             NextLevelBool = true;
-            Invoke("NextLevel", 1.2f);
+            Invoke("NextLevel", 1.6f);
             
         }
 
