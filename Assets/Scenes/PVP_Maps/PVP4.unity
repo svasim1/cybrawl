@@ -914,6 +914,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1553047315}
+    - target: {fileID: 3261209456421658952, guid: 160721a3ef630c04480ae4a3382f0915, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4172314661431778075, guid: 160721a3ef630c04480ae4a3382f0915, type: 3}
       propertyPath: m_Name
       value: PlayerHealth

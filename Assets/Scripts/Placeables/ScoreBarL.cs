@@ -9,7 +9,7 @@ public class ScoreBarL : MonoBehaviour
     }
     // Update is called once per frame
     void FixedUpdate(){
-        float Score = 12 - GameData.P1Score; 
+        float Score = 12 - GameData.P2Score; 
         Animator animator = GetComponent<Animator>();
         animator.SetFloat("Score", Score);
     }

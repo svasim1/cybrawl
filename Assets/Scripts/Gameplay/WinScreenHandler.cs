@@ -13,6 +13,8 @@ public class WinScreenHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameData.P1Score = 0;
+        GameData.P2Score = 0;
         Player = GameObject.Find("Player");
         winLeft = GameObject.Find("WinLeft");
         winRight = GameObject.Find("WinRight");
