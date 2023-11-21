@@ -29,6 +29,8 @@ public class WinScreenHandler : MonoBehaviour
         GameObject.Find("AudioHandler").transform.Find("SFX").Find("Victory").GetComponent<AudioSource>().Play();
         GameObject.Find("AudioHandler").transform.Find("SFX").Find("VictoryVoice").GetComponent<AudioSource>().Play();
         Debug.Log("Played shoot sound");
+        // Get back to titleScreen
+        Invoke("BackToTitleScreen", 12f);
     }
     // Update is called once per frame
     void Update()
@@ -57,5 +59,13 @@ public class WinScreenHandler : MonoBehaviour
     public void Flip()
     {
         Player.transform.Rotate(0, 180, 0);
+    }
+
+    void BackToTitleScreen()
+    {
+        // Unmute music
+        GameObject.Find("AudioHandler").transform.Find("Music").GetComponent<AudioSource>().mute = false;
+        // Load titleScreen
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
     }
 }
