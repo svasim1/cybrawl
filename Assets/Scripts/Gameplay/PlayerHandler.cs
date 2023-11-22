@@ -50,6 +50,12 @@ public class PlayerHandler : MonoBehaviour
 
     string LvlNum(){
         string LvlNum = Random.Range(1, 12).ToString();
+        string CurrentMap = SceneManager.GetActiveScene().name.ToString();
+        Debug.Log("Current Map Name: " + CurrentMap);
+        while(CurrentMap == $"PVP{LvlNum}"){
+            LvlNum = Random.Range(1, 12).ToString();
+            Debug.Log("Rerolling number to: " + LvlNum);
+        }
         Debug.Log("Level Number: " + LvlNum);
         return LvlNum;
     }
