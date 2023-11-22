@@ -11,7 +11,7 @@ public class WeaponCollect : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if player is colliding with object tagged WeaponSpawner
-        if (!hasWeapon && collision.CompareTag("WeaponSpawner"))
+        if (!hasWeapon && collision.CompareTag("WeaponSpawner") && collision.isTrigger)
         {
             Debug.Log("OnTriggerEnter2D called with " + collision.gameObject.name);
 
