@@ -17,6 +17,8 @@ public class WeaponRailgun : MonoBehaviour
     public int ammo = 3;
     [SerializeField] private string fireButton;
 
+    private LineRenderer lineRenderer;
+
     private void Start()
     {
         // Gets the fireButton of the player
@@ -25,6 +27,14 @@ public class WeaponRailgun : MonoBehaviour
         {
             fireButton = player.fireButton;
         }
+        // Initialize the LineRenderer
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.widthMultiplier = 0.1f;
+        lineRenderer.positionCount = 2;
+
+        lineRenderer.startColor = new Color(1f, 0f, 0f, 1f); // Red color with 50% transparency
+        lineRenderer.endColor = new Color(1f, 0f, 0f, 0.5f); // Red color with 50% transparency
     }
 
     void Update()
@@ -55,6 +65,10 @@ public class WeaponRailgun : MonoBehaviour
         // Create a ray
         RaycastHit2D hit = Physics2D.Raycast(raySpawnPoint.position, rayDirection, rayDistance, layerMask);
 
+        lineRenderer.SetPosition(0, raySpawnPoint.position);
+        lineRenderer.SetPosition(1, hit ? hit.point : (Vector2)raySpawnPoint.position + rayDirection * rayDistance);
+        Invoke("ClearLine", 0.1f);
+
         // Check if the ray hit something
         if (hit)
         {
@@ -70,7 +84,7 @@ public class WeaponRailgun : MonoBehaviour
         // Destroy the weapon when out of ammo
         if (ammo == 0)
         {
-            OutOfAmmo();
+            Invoke("OutOfAmmo", 0.1f);
         }
     }
 
@@ -93,5 +107,11 @@ public class WeaponRailgun : MonoBehaviour
         // Get the AudioSource component and play the shoot sound
         GameObject.Find("AudioHandler").transform.Find("SFX").Find("Railgun").GetComponent<AudioSource>().Play();
         Debug.Log("Played shoot sound");
+    }
+
+    void ClearLine()
+    {
+        lineRenderer.SetPosition(0, Vector3.zero);
+        lineRenderer.SetPosition(1, Vector3.zero);
     }
 }
