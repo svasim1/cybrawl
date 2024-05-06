@@ -6,7 +6,7 @@ public class WeaponCollect : MonoBehaviour
 {
     public GameObject WeaponHolder;
     public bool hasWeapon = false;
-    public float spawnCooldown = 20f;
+    public float spawnCooldown = 10f;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
