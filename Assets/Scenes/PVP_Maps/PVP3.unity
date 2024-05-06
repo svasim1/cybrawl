@@ -232,6 +232,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevitationPad
       objectReference: {fileID: 0}
+    - target: {fileID: 3676289590390684612, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596370525620370324, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -288,6 +296,14 @@ PrefabInstance:
     - target: {fileID: 3676289590390684612, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
       propertyPath: m_Name
       value: LevitationPad (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676289590390684612, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596370525620370324, guid: f6530bd46e243e24bbf0c44eff96171a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
