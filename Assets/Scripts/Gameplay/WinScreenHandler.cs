@@ -13,8 +13,6 @@ public class WinScreenHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameData.P1Score = 0;
-        GameData.P2Score = 0;
         Player = GameObject.Find("Player");
         winLeft = GameObject.Find("WinLeft");
         winRight = GameObject.Find("WinRight");
@@ -37,7 +35,8 @@ public class WinScreenHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameData.P1Score < GameData.P2Score)
+        Debug.Log("Scores: P1: " + GameData.P1Score + " P2: " + GameData.P2Score + "THIS IS THE WIN SCREEN CHECKING WHO WON");
+        if (GameData.P1Score <= GameData.P2Score)
         {
             winLeft.SetActive(false);
             winRight.SetActive(true);
@@ -69,5 +68,7 @@ public class WinScreenHandler : MonoBehaviour
         GameObject.Find("AudioHandler").transform.Find("Music").GetComponent<AudioSource>().mute = false;
         // Load titleScreen
         UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
+        GameData.P1Score = 0;
+        GameData.P2Score = 0;
     }
 }
