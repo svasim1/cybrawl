@@ -8,6 +8,7 @@ public class WeaponRailgun : MonoBehaviour
 
     [Header("Weapon")]
     public Transform raySpawnPoint;
+    public GameObject explosionParticlePrefab;
 
     [Header("Weapon Stats")]
     public float rayDamage = 40f;
@@ -32,9 +33,11 @@ public class WeaponRailgun : MonoBehaviour
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.widthMultiplier = 0.1f;
         lineRenderer.positionCount = 2;
+        // Set the start color of the line renderer to the hexadecimal color 6A6868 with 50% transparency
+        lineRenderer.startColor = new Color(0.416f, 0.408f, 0.408f, 0.5f);
 
-        lineRenderer.startColor = new Color(1f, 0f, 0f, 1f); // Red color with 50% transparency
-        lineRenderer.endColor = new Color(1f, 0f, 0f, 0.5f); // Red color with 50% transparency
+        // Set the end color of the line renderer to the hexadecimal color 6A6868 with 90% transparency
+        lineRenderer.endColor = new Color(0.416f, 0.408f, 0.408f, 0.9f);
     }
 
     void Update()
@@ -68,6 +71,9 @@ public class WeaponRailgun : MonoBehaviour
         lineRenderer.SetPosition(0, raySpawnPoint.position);
         lineRenderer.SetPosition(1, hit ? hit.point : (Vector2)raySpawnPoint.position + rayDirection * rayDistance);
         Invoke("ClearLine", 0.1f);
+        // Instantiate a red explosion particle at hit.point
+        GameObject explosion = Instantiate(explosionParticlePrefab, hit.point, Quaternion.Euler(0, 0, rayDirection == Vector2.right ? 150 : 330));
+        Destroy(explosion, 0.3f);
 
         // Check if the ray hit something
         if (hit)

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raySpawnPoint: {fileID: 5548367619685107612}
+  explosionParticlePrefab: {fileID: 8035687291791592399, guid: cf4b8233b89bf694c8f8be2a828897df, type: 3}
   rayDamage: 40
   rayDistance: 100
   ammo: 3

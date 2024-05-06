@@ -8,6 +8,7 @@ public class WeaponSidearm : MonoBehaviour
 
     [Header("Weapon")]
     public Transform raySpawnPoint;
+    public GameObject explosionParticlePrefab;
 
     [Header("Weapon Stats")]
     public float rayDamage = 15f;
@@ -67,6 +68,10 @@ public class WeaponSidearm : MonoBehaviour
         lineRenderer.SetPosition(0, raySpawnPoint.position);
         lineRenderer.SetPosition(1, hit ? hit.point : (Vector2)raySpawnPoint.position + rayDirection * rayDistance);
         Invoke("ClearLine", 0.1f);
+
+        // Instantiate a red explosion particle at hit.point
+        GameObject explosion = Instantiate(explosionParticlePrefab, hit.point, Quaternion.identity);
+        Destroy(explosion, 0.3f);
 
         // Check if the ray hit something
         if (hit)
